@@ -8,12 +8,17 @@ import {subCategories} from '../../data/subCategories';
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import {colors} from '../../data/colors';
+import {sizes} from "../../data/sizes";
+import Axios from 'axios';
 
 const schema = yup.object().shape({
   title: yup.string().required(),
   price: yup.string().required(),
   description: yup.string().required,
 })
+
+const token  = localStorage.getItem('token');
 
 const AdminProducts = (props) => {
 
@@ -22,12 +27,23 @@ const AdminProducts = (props) => {
   });
 
   const [selectedImages, setSelectedImages] = useState([]);
+  const [imagesToUpload, setImagesToUpload] = useState([]);
+  const [uploadedImagesUrl, setUploadedImagesUrl] = useState([]);
   const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
+  const [color, setColor] = useState([]);
+  const [size, setSize] = useState([]);
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleImageChange = (e) => {
     if (e.target.files) {
       const filesArray = Array.from(e.target.files).map((file) => URL.createObjectURL(file));
+
+      const imagesArray = Array.from(e.target.files).map((file) => file);
+
+      setImagesToUpload((prevImages) => prevImages.concat(imagesArray));
 
       setSelectedImages((prevImages) => prevImages.concat(filesArray));
       Array.from(e.target.files).map(
@@ -54,11 +70,55 @@ const AdminProducts = (props) => {
     }
   }
 
-  const submitHandler = (data) => {}
+  let imagesArray = [];
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    imagesToUpload.map((image) => {
+      const formData = new FormData();
+      formData.append("file", image)
+      formData.append("upload_preset", "vgpe2ptd");
+
+      Axios.post(
+         "https://api.cloudinary.com/v1_1/dmtkcdiya/image/upload",
+         formData
+      ).then((response) => {
+        console.log(response);
+        imagesArray.push(response.data.secure_url);
+      });
+
+    });
+    setUploadedImagesUrl(imagesArray);
+
+    const productRequest = {
+      name: name,
+      price: price,
+      description: description,
+      category: category,
+      subCategory: subCategory,
+      sizes: size,
+      colors: color,
+      productImages: uploadedImagesUrl
+    }
+
+    Axios.post(
+       "http://localhost:8045/api/admin/add-product",
+       productRequest,
+       {
+         headers: {
+           Authorization: `Bearer ${token}`,
+           "content-type": "application/json",
+         }
+       }).then((response) => {
+      console.log("Product Upload Response: ", response);
+       });
+  };
+
+  // console.log('UploadedImages: ', uploadedImagesUrl);
 
   return (
      <AdminLayout>
-       <form onSubmit={handleSubmit(submitHandler)}>
+       <form onSubmit={submitHandler}>
          <div className="product-wrapper">
            <h1 className="title">Products</h1>
            <div className="product-list-wrapper">
@@ -72,11 +132,25 @@ const AdminProducts = (props) => {
 
                    <div>
                      <h4>Title:</h4>
-                     <input name="title" type="text" placeholder="Title of Product"/>
+                    <input
+                       name="name"
+                       type="text"
+                       placeholder="Title of Product"
+                       onChange={(event) => setName(event.target.value)}
+                    />
                    </div>
                    <div>
                      <h4>Price:</h4>
-                     <input name="price" type="text" placeholder="Price of Product"/>
+                     <input
+                        name="price"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        required
+                        pattern="^\d+(?:\.\d{1,2})?$"
+                        placeholder="Price of Product"
+                        onChange={(event) => setPrice(event.target.value)}
+                     />
                    </div>
                  </div>
 
@@ -99,7 +173,12 @@ const AdminProducts = (props) => {
                <div className="description-details">
                  <label>
                    <h4>Description:</h4>
-                   <textarea name="description" placeholder="Please Enter A Description" className="description"/>
+                   <textarea
+                      name="description"
+                      placeholder="Please Enter A Description"
+                      className="description"
+                      onChange={(e) => setDescription(e.target.value)}
+                   />
                  </label>
                </div>
              </div>
@@ -111,13 +190,13 @@ const AdminProducts = (props) => {
                  <Select
                     name="category"
                     components={makeAnimated()}
-                    onChange={setCategory}
                     theme={customTheme}
                     isMulti
                     isSearchable
                     options={categories}
                     placeholder="Select a category"
                     noOptionsMessage={() => "No matching category found!"}
+                    onChange={setCategory}
                  />
                </div>
 
@@ -126,13 +205,45 @@ const AdminProducts = (props) => {
                  <Select
                     name="sub-category"
                     components={makeAnimated()}
-                    onChange={setSubCategory}
                     theme={customTheme}
                     isMulti
                     isSearchable
                     options={subCategories}
                     placeholder="Select a sub-category"
                     noOptionsMessage={() => "No matching sub-category found!"}
+                    onChange={setSubCategory}
+                 />
+               </div>
+             </div>
+             <div className="category-main-wrapper">
+
+               <div className="category-wrapper">
+                 <h4>Color: </h4>
+                 <Select
+                    name="color"
+                    components={makeAnimated()}
+                    onChange={setColor}
+                    theme={customTheme}
+                    isMulti
+                    isSearchable
+                    options={colors}
+                    placeholder="Select colors"
+                    noOptionsMessage={() => "No matching color found!"}
+                 />
+               </div>
+
+               <div className="category-wrapper">
+                 <h4>Size: </h4>
+                 <Select
+                    name="size"
+                    components={makeAnimated()}
+                    onChange={setSize}
+                    theme={customTheme}
+                    isMulti
+                    isSearchable
+                    options={sizes}
+                    placeholder="Select sizes"
+                    noOptionsMessage={() => "No matching size found!"}
                  />
                </div>
              </div>
