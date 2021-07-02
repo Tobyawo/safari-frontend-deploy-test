@@ -11,6 +11,9 @@ import * as yup from 'yup';
 import {colors} from '../../data/colors';
 import {sizes} from "../../data/sizes";
 import Axios from 'axios';
+import { Grid, Segment } from 'semantic-ui-react';
+
+
 
 const schema = yup.object().shape({
   title: yup.string().required(),
@@ -117,7 +120,17 @@ const AdminProducts = (props) => {
   // console.log('UploadedImages: ', uploadedImagesUrl);
 
   return (
-     <AdminLayout>
+    <AdminLayout>
+      <Grid>
+      <h1 className="title">Products</h1>
+        <Grid.Column width="8">
+          <Segment>
+            <h3 className="info-title">Add Products</h3>
+          </Segment>
+        </Grid.Column>
+         <Grid.Column width="8">
+        </Grid.Column>
+      </Grid>
        <form onSubmit={submitHandler}>
          <div className="product-wrapper">
            <h1 className="title">Products</h1>
