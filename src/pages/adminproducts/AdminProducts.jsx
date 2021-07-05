@@ -162,16 +162,6 @@ const AdminProducts = (props) => {
   // console.log('UploadedImages: ', uploadedImagesUrl);
 
   return ( <AdminLayout>
-    <Grid>
-      <h1 className="title"> Products </h1>
-      <Grid.Column width = "8">
-      <Segment >
-          <h3 className="info-title" > Add Products </h3>
-        </Segment> 
-      </Grid.Column>
-      <Grid.Column width = "8">
-      </Grid.Column>
-    </Grid>
     <form onSubmit = {submitHandler}>
     <div className = "product-wrapper">
         <h1 className="title" > Products </h1>
