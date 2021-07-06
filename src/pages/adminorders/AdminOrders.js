@@ -1,9 +1,41 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, useEffect, useState} from 'react';
 import './AdminOrders.css';
 import AdminLayout from "../../components/adminlayout/AdminLayout";
 import {Table} from '../../components/table/Table';
 
 const AdminOrders = (props) => {
+  const [data, setdata] = useState([]);
+   const url = "https://safariwebstoreapp.herokuapp.com/orders/admin/status";
+   const datas = [
+    {
+      firstName: "David",
+      lastName: "Oparanti",
+      email: "david@gmail.com",
+     
+      quantity: "2",
+      totalCost: "2000",
+      deliveryMethod: "debitcard",
+      status: "DELIVERED"
+       
+    },
+    {
+      firstName: "Emmanuel",
+      lastName: "Macauley",
+      email: "emmanuelmac@gmail.com",
+    
+      quantity: "1",
+      totalCost: "1000",
+      deliveryMethod: "debitcard",
+      status: "DELIVERED",
+    
+    }
+  ];
+   useEffect(() => {
+    //  fetch(url)
+    //  .then(response => response.json())
+    //  .then(data => setdata(data))
+    setdata(datas)
+   }, [])
 
   const columns = useMemo(
     () => [
@@ -33,11 +65,11 @@ const AdminOrders = (props) => {
           },
           {
             Header: 'Total Cost',
-            accessor: 'total cost',
+            accessor: 'totalCost',
           },
           {
             Header: 'Delivery Method',
-            accessor: 'delivery method',
+            accessor: 'deliveryMethod',
           },
           {
             Header: 'Status',
@@ -49,7 +81,7 @@ const AdminOrders = (props) => {
     []
   )
 
-  const data = [];
+  
 
   return (
      <AdminLayout>
