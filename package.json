@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^12.8.3",
     "antd": "^4.16.5",
     "axios": "^0.21.1",
-    "node-sass": "^6.0.0",
+    "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.9.0",
@@ -17,6 +17,8 @@
     "react-scripts": "4.0.3",
     "react-select": "^4.3.1",
     "react-table": "^7.7.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3",
     "web-vitals": "^1.1.2",
     "yarn": "^1.22.10",
     "yup": "^0.32.9"
