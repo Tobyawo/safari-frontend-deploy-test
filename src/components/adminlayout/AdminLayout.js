@@ -1,6 +1,8 @@
 import React from 'react';
 import SideBar from "../sidebar/SideBar";
 import './AdminLayout.css';
+import { Grid } from 'semantic-ui-react';
+
 
 const AdminLayout = ({ children }) => {
 
@@ -26,11 +28,16 @@ const AdminLayout = ({ children }) => {
   ]
 
   return (
-     <div className="dashboard-wrapper">
-       <SideBar menuItems={menu} />
-       <div>
-         { children }
-       </div>
+    <div className="dashboard-wrapper">
+      <Grid>
+        <Grid.Column mobile={16} tablet={8} computer={5}>
+          <SideBar menuItems={menu} />
+        </Grid.Column>
+         <Grid.Column mobile={16} tablet={8} computer={11}>
+           { children }
+        </Grid.Column>
+      </Grid>
+       
      </div>
   );
 }
