@@ -126,7 +126,7 @@ const AdminProducts = (props) => {
         console.log(productRequest);
 
         Axios.post(
-           "http://localhost:8045/api/admin/add-product",
+           "https://safariwebstoreapp.herokuapp.com/api/admin/add-product",
            productRequest, {
              headers: {
                Authorization: `Bearer ${token}`,
