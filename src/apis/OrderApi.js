@@ -10,8 +10,9 @@ const OrderApi = {
       return userOrders;
     },
 
-    adminGetOrderByStatus: async () => {
-        const { data: ordersByStatus } = await axios.get(`${BaseUrl}/orders/admin/status`, setHeader());
+    adminGetOrderByStatus: async (status) => {
+
+        const { data: ordersByStatus } = await axios.get(`${BaseUrl}/orders/admin/status?status=${status}`, setHeader());
         
         return ordersByStatus;
       },
