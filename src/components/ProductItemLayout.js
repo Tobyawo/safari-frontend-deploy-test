@@ -31,7 +31,9 @@ function ProductItemLayout(props) {
 
     setProduct(productData);
 
-    const arrColor = productData.color;
+    console.log("=============>", productData);
+
+    const arrColor = productData.colors;
     arrColor.unshift("Select Color");
 
     const newOptionColor = arrColor.map((color, index) => {
@@ -40,7 +42,7 @@ function ProductItemLayout(props) {
 
     setColors(newOptionColor);
 
-    const arrSize = productData.size;
+    const arrSize = productData.sizes;
     arrSize.unshift("Select Size");
 
     const newOptionSize = arrSize.map((size, index) => {
