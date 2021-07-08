@@ -7,11 +7,7 @@ function CardProducts(props) {
     <div className="cards">
       <h1 className="shopstyleh">Shop with Style</h1>
       <p className="shopstylep">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae gravida
-        cursus adipiscing viverra at tortor, egestas odio parturient. Morbi ut
-        lorem in erat. Et et molestie diam diam ultricies. Scelerisque duis diam
-        ac cras dictum adipiscing. Venenatis at sit proin ut vitae adipiscing id
-        facilisis.
+        Shop the latests in Fashion. Shop at Safari webstore today.
       </p>
       <div className="cards__container">
         <div className="cards__wrapper">
@@ -27,7 +23,7 @@ function CardProducts(props) {
                   price={"₦" + product.price}
                   path={`/cart/${id}`}
                   // favourtie="/favourite"
-                  favourtie={`/api/customer/favourite/${product.id}`}
+                  // favourtie={`/api/customer/favourite/${product.id}`}
                 />
               );
             })}

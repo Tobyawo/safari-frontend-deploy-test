@@ -26,9 +26,9 @@
   margin-left: 10px;
   font-weight: 600;
 }
-.product-item-categorycolor {
-  margin-left: 10px;
-}
+// .product-item-categorycolor {
+//   margin-left: 10px;
+// }
 .product-item-qty {
   margin-left: 10px;
   margin-bottom: 30px !important;
@@ -41,4 +41,13 @@
 .product-item-description-p {
   font-size: 15px;
   padding-bottom: 10px;
+}
+
+.addtocart__notice {
+  padding: 10px 20px;
+  color: #21ba45;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 18px;
 }
