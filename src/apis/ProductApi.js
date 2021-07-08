@@ -4,7 +4,6 @@ import axios from "axios";
 import setHeader from "../utilities/Header";
 
 const token = localStorage.getItem("token");
-console.log(token);
 
 const productApis = {
   getAllProduct: async () => {
@@ -18,14 +17,11 @@ const productApis = {
     return products;
   },
 
-  getProductById: async (id) => {
-    const { data: product } = await axios.get(`${BaseUrl}/products/${id}`);
-
-    return product;
-  },
-
   getAllProducts: async () => {
-    const { data: products } = await axios.get(`${BaseUrl}/products`);
+    const { data: products } = await axios.get(
+      `${BaseUrl}/products`,
+      setHeader()
+    );
 
     return products;
   },
