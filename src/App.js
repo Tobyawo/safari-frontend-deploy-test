@@ -18,6 +18,7 @@ import AccountMyFavourites from './pages/account/MyFavourites'
 import AdminDashboard from "./pages/admindashboard/AdminDashboard";
 import AdminOrders from "./pages/adminorders/AdminOrders";
 import AdminProducts from "./pages/adminproducts/AdminProducts";
+import FavouritesPage from './pages/FavouritesPage';
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
       <Route path='/admin/dashboard' component={AdminDashboard} />
       <Route path='/admin/orders' component={AdminOrders} />
       <Route path='/admin/products' component={AdminProducts} />
+      <Route path ='/favourites' component={FavouritesPage} />
     </Switch>
     </Router>
     </>
