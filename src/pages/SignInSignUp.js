@@ -1,9 +1,11 @@
 import React from "react";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
+import Footer from "../components/Footer";
 
 const SignInSignUp = () => {
   return (
+    <>
     <section className="sign-in-sign-up">
       <div className="page-title">
         <h2 className="page-title__main">Hello there!</h2>
@@ -16,6 +18,8 @@ const SignInSignUp = () => {
       <SignUp />
       </div>
     </section>
+    <Footer />
+    </>
   );
 };
 

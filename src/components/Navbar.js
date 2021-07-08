@@ -120,7 +120,7 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 activeClassName="active-icon"
-                to="/account/favourites"
+                to="/favourites"
                 className="nav-links"
               >
                 <i class="fas fa-heart"></i>

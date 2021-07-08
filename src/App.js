@@ -20,6 +20,8 @@ import AdminProducts from "./pages/adminproducts/AdminProducts";
 import ProductPage from "./pages/ProductPage";
 import ProductItemLayout from "./components/ProductItemLayout";
 import SearchPage from "./pages/SearchPage";
+import FavouritesPage from './pages/FavouritesPage';
+
 
 function App() {
   return (
@@ -41,6 +43,7 @@ function App() {
           <Route path="/account/myorders" component={AccountMyOrders} />
           <Route path="/account/myfavourites" component={AccountMyFavourites} />
           <Route path="/admin/dashboard" component={AdminDashboard} />
+          <Route path ='/favourites' component={FavouritesPage} />
           <Route path="/admin/orders" component={AdminOrders} />
           <Route path="/admin/products" component={AdminProducts} />
           <Route path="/search?keyword=data" component={SearchPage} />

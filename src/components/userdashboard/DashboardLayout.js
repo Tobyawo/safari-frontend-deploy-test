@@ -1,6 +1,7 @@
 import React from 'react';
 import SideBar from "../sidebar/SideBar";
 import './UserDashboardWrapper.css';
+import Footer from '../Footer';
 
 const DashboardLayout = ({ children }) => {
 
@@ -35,6 +36,7 @@ const DashboardLayout = ({ children }) => {
   ]
 
   return (
+    <>
      <div className="dashboard-wrapper">
        
        <SideBar menuItems={menu} />
@@ -43,6 +45,9 @@ const DashboardLayout = ({ children }) => {
        </div>
        
      </div>
+     <br /><br />
+     <Footer />
+     </>
   );
 }
 
