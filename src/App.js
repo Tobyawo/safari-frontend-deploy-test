@@ -9,7 +9,7 @@ import SignInSignUp from "./pages/SignInSignUpPage";
 import TermsConditions from "./pages/TermsConditionsPage";
 import Clothes from "./pages/categories/Clothes";
 // import Shoes from './pages/categories/ShoesPage'
-// import Accessories from './pages/categories/AccessoriesPage'
+import Accessories from "./pages/categories/Accessories";
 import AccountInfo from "./pages/account/Account";
 import AccountAddressBook from "./pages/account/AddressBook";
 import AccountMyOrders from "./pages/account/MyOrders";
@@ -20,8 +20,7 @@ import AdminProducts from "./pages/adminproducts/AdminProducts";
 import ProductPage from "./pages/ProductPage";
 import ProductItemLayout from "./components/ProductItemLayout";
 import SearchPage from "./pages/SearchPage";
-import FavouritesPage from './pages/FavouritesPage';
-
+import FavouritesPage from "./pages/FavouritesPage";
 
 function App() {
   return (
@@ -36,14 +35,14 @@ function App() {
           <Route path="/cart" component={Cart} />
           <Route path="/signin-signup" component={SignInSignUp} />
           <Route path="/categories/clothes/" component={Clothes} />
-          {/* <Route path='/categories/shoes' component={Shoes} />
-      <Route path='/categories/accessories' component={Accessories} /> */}
+          {/* <Route path='/categories/shoes' component={Shoes} /> */}
+          <Route path="/categories/accessories" component={Accessories} />
           <Route path="/account/information" component={AccountInfo} />
           <Route path="/account/addressbook" component={AccountAddressBook} />
           <Route path="/account/myorders" component={AccountMyOrders} />
           <Route path="/account/myfavourites" component={AccountMyFavourites} />
           <Route path="/admin/dashboard" component={AdminDashboard} />
-          <Route path ='/favourites' component={FavouritesPage} />
+          <Route path="/favourites" component={FavouritesPage} />
           <Route path="/admin/orders" component={AdminOrders} />
           <Route path="/admin/products" component={AdminProducts} />
           <Route path="/search?keyword=data" component={SearchPage} />
