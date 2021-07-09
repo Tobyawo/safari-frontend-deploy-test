@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import productApis from "../apis/ProductApi";
 
 const NavContext = React.createContext();
 const UpdateNavContext = React.createContext();
@@ -13,14 +14,25 @@ export function useCartUpdate() {
 
 export function CartProvider({ children }) {
   const getCartCount = localStorage.getItem("cart-count");
-  let counter = 0;
 
-  if (getCartCount == null) localStorage.setItem("cart-count", counter);
-  else counter = localStorage.getItem("cart-count");
+  const [count, setCount] = useState(0);
 
-  console.log(counter, "dd");
+  productApis
+    .getCartItem()
+    .then((data) => {
+      let counter = 0;
 
-  const [count, setCount] = useState(Number(counter));
+      data.forEach((cart) => {
+        counter += Number(cart.quantity);
+      });
+
+      localStorage.setItem("cart-count", Number(counter));
+
+      setCount(Number(counter));
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 
   function addToCart() {
     setCount((prevCount) => prevCount + 1);
