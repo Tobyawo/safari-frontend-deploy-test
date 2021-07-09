@@ -8,7 +8,8 @@ import Cart from "./pages/CartPage";
 import SignInSignUp from "./pages/SignInSignUpPage";
 import TermsConditions from "./pages/TermsConditionsPage";
 import Clothes from "./pages/categories/Clothes";
-import Shoes from './pages/categories/Shoes'
+import Shoes from './pages/categories/Shoes';
+import Checkout from "./pages/CheckoutPage";
 // import Accessories from './pages/categories/AccessoriesPage'
 import AccountInfo from "./pages/account/Account";
 import AccountAddressBook from "./pages/account/AddressBook";
@@ -50,6 +51,7 @@ function App() {
           <Route path="/product/:id" component={ProductPage} />
           <Route path="/product" component={ProductPage} />
           <Route path="/search" component={SearchPage} />
+          <Route path ="/checkout" component={Checkout} />
         </Switch>
       </Router>
     </>
