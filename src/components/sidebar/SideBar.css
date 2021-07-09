@@ -30,6 +30,56 @@
     transition: 0.15s ease-in-out;
 }
 
-.signout-image {
+.sign-out-image {
     padding-right: 20.79px;
+}
+/* medium screen */
+@media screen and (max-width:950px) {
+    .nav-link-icon, .title{display: none;}
+    .sidebar-wrapper{
+        flex-direction: row;
+        margin: 0rem;
+        width: 100%;
+        height: auto;
+    }
+    .sign-out-image {
+        padding-right: 2x;
+    }
+    .sign-out-text{
+        display: none;
+    }
+    .menu-wrapper{
+        flex-direction: row;
+        padding: 0;
+    }
+    .nav-link{
+        padding: 10px;
+        font-weight: bold;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        
+    }
+    .menu-wrapper .nav-link.active{
+        color: #000000 ;
+        border-radius: 0 !important;
+    }
+    .sign-out-button{
+        padding: 0 20px;
+        text-align: center;
+        background-color: #fff;
+    }
+}
+@media screen and (max-width:450px) {
+    .nav-link-text, .title{display: none;}
+    .nav-link-icon{
+        display: block;
+    }
+    .nav-link{
+        padding-top: 0;
+        padding-bottom: 10px;
+    }
+    
 }
