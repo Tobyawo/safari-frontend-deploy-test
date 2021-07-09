@@ -6,7 +6,7 @@ import productApis from "../apis/ProductApi";
 
 function Cart() {
   const [userCartItem, setUserCartItem] = useState([]);
-  const [totalCartPrice, setTotalCartPrice] = useState([]);
+  const [totalCartPrice, setTotalCartPrice] = useState(0);
 
   useEffect(async () => {
     const cartItem = await productApis.getCartItem();
