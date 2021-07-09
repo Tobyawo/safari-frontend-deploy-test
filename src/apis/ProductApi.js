@@ -4,6 +4,7 @@ import axios from "axios";
 import setHeader from "../utilities/Header";
 
 const token = localStorage.getItem("token");
+console.log(token);
 
 const productApis = {
   getAllProduct: async () => {
@@ -17,11 +18,14 @@ const productApis = {
     return products;
   },
 
+  getProductById: async (id) => {
+    const { data: product } = await axios.get(`${BaseUrl}/products/${id}`);
+
+    return product;
+  },
+
   getAllProducts: async () => {
-    const { data: products } = await axios.get(
-      `${BaseUrl}/products`,
-      setHeader()
-    );
+    const { data: products } = await axios.get(`${BaseUrl}/products`);
 
     return products;
   },
@@ -45,28 +49,39 @@ const productApis = {
     return itemsInCartDB;
   },
 
-  addProductToCart: async function addToCart(id) {
-    try {
-      const response = await fetch(
-        `http://localhost:8045/products/add-to-cart/${id}`,
-        {
-          method: "POST",
-          body: JSON.stringify({
-            productId: id,
-          }),
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      let data = await response.json();
-      //   alert("Item Added To Cart");
-      console.log(data);
-    } catch (err) {
-      // alert("Something Went Wrong");
-      console.log(err);
-    }
+  addProductToCart: async (data) => {
+    const { data: response } = await axios.post(
+      `${BaseUrl}/products/add-to-cart`,
+      data,
+      setHeader()
+    );
+
+    return response;
+  },
+
+  getCartItem: async () => {
+    let { data: cartItems } = await axios.get(
+      `${BaseUrl}/products/cart-items`,
+      setHeader()
+    );
+
+    let total = 0;
+
+    cartItems = cartItems.map((element) => {
+      total += element.price * Number(element.quantity);
+      return { ...element, total };
+    });
+
+    return cartItems;
+  },
+
+  deleteCartItemById: async (id) => {
+    let { data: response } = await axios.delete(
+      `${BaseUrl}/products/delete/${id}`,
+      setHeader()
+    );
+
+    return response;
   },
 
   deleteProductFromCart: async function deleteFromCart(id) {

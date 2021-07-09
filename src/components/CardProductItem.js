@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import ProductApis from "../apis/ProductApi";
 import { Link } from "react-router-dom";
 import FavouriteContext from "../store/Favourite-Context";
+
 function CardProductItem(props) {
   const [cartItemsDB, setCartItemsDB] = useState([]);
 
@@ -54,7 +55,7 @@ function CardProductItem(props) {
   return (
     <>
       {" "}
-      <Link to={props.path}>
+      <Link to={"/product/" + props.id}>
         <li className="cards__item">
           <div>
             <figure className="cards_item_pic_wrap">
@@ -68,14 +69,14 @@ function CardProductItem(props) {
               <h5 className="cards__item__text">{props.name}</h5>
               <p className="cards__item__price">{props.price}</p>
               <div className="product-item-hover">
-                <div className="favourite" onClick={toggleAddToFavoriteHandler}>
-                  <i class="far fa-heart">{itemIsFavorite ? "x" : ""}</i>
-                </div>
+                {/* <div className="favourite">
+                  <i class="far fa-heart"></i>
+                </div> */}
 
-                <button className="addtocart" onClick={toggleAddToCartHandler}>
+                {/* <button className="addtocart">
                   ADD TO CART
                   <i class="cart-icon fas fa-shopping-cart"></i>
-                </button>
+                </button> */}
               </div>
               {/* <div>{props.id}</div> */}
             </div>
