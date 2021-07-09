@@ -3,7 +3,7 @@ div {
   padding: 0 1rem 1rem 1rem;
   table {
     border-spacing: 0;
-    border: 1px solid black;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 
     tr {
       :last-child {
@@ -13,13 +13,27 @@ div {
       }
     }
 
-    th,
+    .defaultColumnInput {
+      border: none;
+      font-size: small;
+      display: none;
+    }
+
+    th {
+      margin: 0;
+      padding: 1.0rem;
+      border-bottom: 1px solid rgb(255, 255, 255);
+      background-color: #f2f2f2;
+      font-size: medium;
+      :last-child {
+        border-right: 0;
+      }
+    }
+
     td {
       margin: 0;
-      padding: 0.5rem;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
-
+      padding: 1.0rem;
+      border-bottom: 1px solid #f2f2f2;
       :last-child {
         border-right: 0;
       }
@@ -27,7 +41,6 @@ div {
   }
   .pagination {
     padding: 0.5rem;
-
     button{
       margin: 0.125rem;
     }

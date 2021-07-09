@@ -1,10 +1,10 @@
 import React, {useMemo, useEffect, useState} from 'react';
 import './AdminOrders.css';
 import AdminLayout from "../../components/adminlayout/AdminLayout";
-import {Table} from '../../components/table/Table';
+import {Table, SelectColumnFilter} from '../../components/table/Table';
 import OrderApi from '../../apis/OrderApi';
 
-const status = "pending"
+// const status = "pending"
 
 const AdminOrders = (props) => {
   const [data, setdata] = useState([]);
@@ -12,32 +12,32 @@ const AdminOrders = (props) => {
    useEffect(() => {
 
     (async()=>{
-      const result = await OrderApi.adminGetOrderByStatus(status);
-      console.log("result: " + result);
+      const result = await OrderApi.adminGetAllOrders();    
+      setdata(result);
     })();
    }, [])
 
   const columns = useMemo(
     () => [
       {
-        Header: 'Ordered By',
+        Header: 'Shipping Address',
         columns: [
           {
-            Header: 'First Name',
-            accessor: 'firstName',
-          },
-          {
-            Header: 'Last Name',
-            accessor: 'lastName',
+            Header: 'Name',
+            accessor: 'shippingAddress.fullName',
           },
           {
             Header: 'Email',
-            accessor: 'email',
+            accessor: 'shippingAddress.email',
+          },
+          {
+            Header: 'Address',
+            accessor: 'shippingAddress.address',
           },
         ],
       },
       {
-        Header: 'Info',
+        Header: 'Order Information',
         columns: [
           {
             Header: 'Quantity',
@@ -52,8 +52,14 @@ const AdminOrders = (props) => {
             accessor: 'deliveryMethod',
           },
           {
+            Header: 'Payment Type',
+            accessor: 'paymentType',
+          },
+          {
             Header: 'Status',
             accessor: 'status',
+            Filter: SelectColumnFilter,
+            filter: 'includes',
           },
         ],
       },
