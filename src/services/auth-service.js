@@ -6,12 +6,12 @@ const doLogin = async (event, formData, buttonState, setAlertBox) => {
     event.preventDefault();
     buttonState(true);
     handleSingleSignOn(formData);
-    const url = config.baseURL + "/login";
+    const url = config.baseURL + "/api/login";
     try {
         const apiResponse = await axios.post(url, formData);
         const {data} = apiResponse;
         setAlertBox({state: true, message: 'Logged in successfully', type: 'success'});
-        localStorage.setItem('token', `Bearer ${data.token}`);
+        localStorage.setItem('token', `${data.token}`);
         window.location = '/';
     } catch (e) {
         const { status} = await e.response;

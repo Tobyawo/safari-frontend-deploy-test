@@ -1,6 +1,6 @@
 const config = {
-    // baseURL:'localhost:8045'
-    baseURL:'https://safariwebstoreapp.herokuapp.com'
+    baseURL:'http://localhost:8045'
+    // baseURL:'https://safariwebstoreapp.herokuapp.com'
 }
 
 export {config};
