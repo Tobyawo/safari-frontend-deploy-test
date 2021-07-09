@@ -23,11 +23,7 @@ const options = [
 
 const totalItemsInCart = document.querySelectorAll(".cart-items .cart").length;
 
-// delete={deleteCartItem}
-
 function CartLayout(props) {
-  // const cartCtx = useContext(CartContext);
-  // console.log(props.userOrders);
   return (
     <Container fluid padded className="cart-container">
       <h2 className="cart-title">Shopping Cart ({totalItemsInCart} item )</h2>
@@ -103,7 +99,7 @@ function CartLayout(props) {
             {" "}
             TOTAL:{" "}
             <span className="cart-totals">
-              ₦{` ${monetize(props.totalPrice)}`}
+              ₦{props.totalPrice != null ? ` ${monetize(props.totalPrice)}` : 0}
             </span>{" "}
           </span>
           <p className="cart-delivery-notice">Delivery fee not included</p>

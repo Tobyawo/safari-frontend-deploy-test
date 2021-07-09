@@ -8,11 +8,10 @@ import {
   GridColumn,
   Menu,
 } from "semantic-ui-react";
-import CategoryColor from "./CategoryColor";
 import "../styles/Layout/_product_item_layout.scss";
 import "../styles/Components/_button.scss";
 import productApis from "../apis/ProductApi";
-import { identity } from "lodash";
+import { useCartUpdate } from "../utilities/CartContext";
 
 function ProductItemLayout(props) {
   const productId = props.productId;
@@ -23,15 +22,13 @@ function ProductItemLayout(props) {
   const [color, setColor] = useState("Select Color");
   const [size, setSize] = useState("Select Size");
   const [message, setMessage] = useState("");
+  //use context for cart item on navigation bar
+  const incrementCartItem = useCartUpdate();
 
   useEffect(async () => {
-    console.log(props);
-
     const productData = await productApis.getProductById(productId);
 
     setProduct(productData);
-
-    console.log("=============>", productData);
 
     const arrColor = productData.colors;
     arrColor.unshift("Select Color");
@@ -76,12 +73,12 @@ function ProductItemLayout(props) {
       productImage: product.length ? props.productImage[0] : "",
     };
 
-    console.log(orderItems);
-
     const response = await productApis.addProductToCart(orderItems);
 
-    if (response.status === 201) setMessage(response.message);
-    else setMessage("Error adding product to cart, please check back later");
+    if (response.status === 201) {
+      setMessage(response.message);
+      incrementCartItem();
+    } else setMessage("Error adding product to cart, please check back later");
   };
 
   //track the size picked from the lists of sizes
