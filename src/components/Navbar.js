@@ -1,20 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ProductApi from "../apis/ProductApi";
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import CartContext from "../store/Cart-Context";
 import { useCart } from "../utilities/CartContext";
 
 function Navbar() {
-  const cartCtx = useContext(CartContext);
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   const currentItemInCart = useCart();
 
   const search = async (e) => {
-    e.preventDefault();
     if (e.key === "Enter")
       window.location.href = `/search?keyword=${e.target.value}`;
   };

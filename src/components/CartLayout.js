@@ -1,32 +1,21 @@
 import React from "react";
 import {
-  Table,
   Grid,
-  Dropdown,
-  Segment,
   Container,
-  Menu,
-  GridColumn,
 } from "semantic-ui-react";
 import "../styles/Components/_cart_layout.scss";
 import "../styles/Components/_button.scss";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import CartContext from "../store/Cart-Context";
 import { monetize } from "../utilities/helperFunction";
-
-const options = [
-  { key: 1, text: "1", value: 1 },
-  { key: 2, text: "2", value: 2 },
-  { key: 3, text: "3", value: 3 },
-];
-
-const totalItemsInCart = document.querySelectorAll(".cart-items .cart").length;
+import { useCartUpdate } from "../utilities/CartContext";
 
 function CartLayout(props) {
+  const updateCartItem = useCartUpdate();
   return (
     <Container fluid padded className="cart-container">
-      <h2 className="cart-title">Shopping Cart ({totalItemsInCart} item )</h2>
+      <h2 className="cart-title">
+        Shopping Cart ({props.userCartItem.length} item )
+      </h2>
       <Grid padded>
         <Grid.Column mobile={16} tablet={4} computer={8}>
           <p className="table-title">ITEM DESCRIPTON</p>
@@ -67,7 +56,10 @@ function CartLayout(props) {
                         <Link
                           onClick
                           className="cart-remove"
-                          onClick={() => props.delete(item.id)}
+                          onClick={() => {
+                            props.delete(item.id);
+                            updateCartItem();
+                          }}
                         >
                           {" "}
                           <i class="far fa-times-circle"></i> REMOVE
@@ -103,7 +95,6 @@ function CartLayout(props) {
             </span>{" "}
           </span>
           <p className="cart-delivery-notice">Delivery fee not included</p>
-
           <Link to="/" className="cart-button-link">
             <span>
               <button className="cart-button cart-continue-shoping">
@@ -123,5 +114,4 @@ function CartLayout(props) {
     </Container>
   );
 }
-
 export default CartLayout;
