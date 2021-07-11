@@ -1,36 +1,36 @@
-
 .wrapper {
-    width: 100%;
-    margin: 3rem 3rem 0 0;
-    padding: 2rem 0 0 0;
+  width: 100%;
+  margin: 3rem 3rem 0 0;
+  padding: 2rem 0 0 0;
 }
 
 .title {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .info-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .info-content {
-    width: 200px;
-    height: 100px;
-    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
-    margin: 2rem 2rem 0 0;
-    padding: 1.5rem 2rem;
-    border-radius: 6px;
+  width: 200px;
+  height: 100px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  margin: 2rem 2rem 0 0;
+  padding: 1rem 2rem;
+  border-radius: 6px;
 }
 
 .info-title {
+
     font-weight: bolder;
     margin-bottom: 1rem;
 }
 
 .info-content h2 {
-    color: #ED165F;
+  color: #ed165f;
 }
 
 .account-info {
@@ -56,3 +56,5 @@
     width: 350px;
 
 }
+
+ 

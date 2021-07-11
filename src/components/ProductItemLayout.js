@@ -157,7 +157,7 @@ function ProductItemLayout(props) {
               <i class="far fa-heart favourite"></i>
             </GridColumn>
             <GridColumn width="14">
-              <button className="product-item-addtocart" onClick={addToCart}>
+              <button className="product-item-addtocart " onClick={addToCart}>
                 ADD TO CART
               </button>
               <p className="addtocart__notice">{message}</p>
