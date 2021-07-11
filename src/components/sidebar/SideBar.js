@@ -6,13 +6,13 @@ const SideBar = ({ menuItems }) => {
   return (
     // <div>
     <div className="sidebar-wrapper">
-      <h1 className="title" style={{ textAlign: "center", marginTop: "20px" }}>
+      <h1 className="title" style={{ textAlign: "center", marginTop: "30px" }}>
         Dashboard
       </h1>
       <div className="menu-wrapper">
         {menuItems.map((menuItem, index) => (
           <NavLink
-            className={`nav-link`}
+            className={`nav-link sidebar-links`}
             to={menuItem.path}
             key={index}
             exact={menuItem.exact}

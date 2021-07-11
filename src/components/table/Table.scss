@@ -1,9 +1,15 @@
-div {
+.orders-table {
   padding: 0 1rem 1rem 1rem;
+  width: 100%;
+}
+
+div {
+  // padding: 0 1rem 1rem 1rem;
   table {
     border-spacing: 0;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-
+    margin-left: auto;
+    margin-right: auto;
     tr {
       :last-child {
         td {
@@ -20,7 +26,7 @@ div {
 
     th {
       margin: 0;
-      padding: 1.0rem;
+      padding: 1rem;
       border-bottom: 1px solid rgb(255, 255, 255);
       background-color: #f2f2f2;
       font-size: medium;
@@ -31,7 +37,7 @@ div {
 
     td {
       margin: 0;
-      padding: 1.0rem;
+      padding: 1rem;
       border-bottom: 1px solid #f2f2f2;
       :last-child {
         border-right: 0;
@@ -40,14 +46,33 @@ div {
   }
   .pagination {
     padding: 0.5rem;
-    button{
+    button {
       margin: 0.125rem;
     }
-    span{
+    span {
       margin: 0.5rem;
     }
-    select{
+    select {
       margin: 0.5rem;
     }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .order-table {
+    display: block !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    margin-left: 33px;
+  }
+
+  .order-table tbody {
+    display: table !important;
+    width: 100% !important;
+  }
+
+  .order-table thead {
+    display: table;
+    width: 100%;
   }
 }
