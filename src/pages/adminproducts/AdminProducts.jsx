@@ -3,6 +3,7 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import './AdminProducts.css';
 import AdminLayout from '../../components/adminlayout/AdminLayout';
+import Footer from '../../components/Footer';
 import {categories} from '../../data/categories';
 import {subCategories} from '../../data/subCategories';
 import {useForm} from 'react-hook-form';
@@ -142,7 +143,9 @@ const AdminProducts = (props) => {
 
   // console.log('UploadedImages: ', uploadedImagesUrl);
 
-  return (<AdminLayout>
+  return (
+  <>
+  <AdminLayout>
        <form onSubmit={submitHandler}>
          <div className="product-wrapper">
            <h1 className="title"> Products </h1>
@@ -275,6 +278,8 @@ const AdminProducts = (props) => {
                 className="add-product-btn"/>
        </form>
      </AdminLayout>
+     <Footer />
+     </>
   );
 }
 

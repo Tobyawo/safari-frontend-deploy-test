@@ -19,28 +19,33 @@ function SearchLayout() {
   }, []);
 
   return (
-    <div>
-      <Container>
-        <h3>Search for: {keyword}</h3>
-        {loading ? (
-          <div>Loading...</div>
-        ) : searchedProducts.length != 0 ? (
-          searchedProducts.map((product, index) => (
-            <CardProductItem
-              key={index}
-              id={product.id}
-              src="/images/products/gustavo-spindula-l7wrlsKDmCE-unsplash 1.png"
-              name={product.name}
-              price={"₦" + product.price}
-              path={`/cart/${product.id}`}
-              // favourtie="/favourite"
-              // favourtie={`/api/customer/favourite/${product.id}`}
-            />
-          ))
-        ) : (
-          <div>No product exist by that keyword</div>
-        )}
-      </Container>
+    <div className="cards">
+      <h2>Search for: {keyword}</h2>
+
+      <div className="cards__container">
+        <div className="cards__wrapper">
+          <ul className="cards__items">
+            {loading ? (
+              <p>Loading...</p>
+            ) : searchedProducts.length != 0 ? (
+              searchedProducts.map((product, index) => (
+                <CardProductItem
+                  key={index}
+                  id={product.id}
+                  src="/images/products/gustavo-spindula-l7wrlsKDmCE-unsplash 1.png"
+                  name={product.name}
+                  price={"₦" + product.price}
+                  path={`/cart/${product.id}`}
+                  // favourtie="/favourite"
+                  // favourtie={`/api/customer/favourite/${product.id}`}
+                />
+              ))
+            ) : (
+              <p>No product exist by that keyword</p>
+            )}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
