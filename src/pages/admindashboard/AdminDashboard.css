@@ -24,8 +24,9 @@
 }
 
 .info-title {
-  font-weight: 500;
-  margin-bottom: 0.5rem;
+
+    font-weight: bolder;
+    margin-bottom: 1rem;
 }
 
 .info-content h2 {
@@ -33,9 +34,27 @@
 }
 
 .account-info {
-  width: 90%;
-  margin: 2rem 2rem 0 0;
-  padding: 1.5rem 2rem;
-  border-radius: 6px;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+    
+    margin: 2rem 2rem 0 0;
+    padding: 1.5rem 2rem;
+    border-radius: 6px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
 }
+.info{
+    margin-top: 3em;
+    width: 50%;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+    
+    
+}
+.info-wrapper{
+    margin-top: 16px;
+}
+.details-info input{
+    padding: 1em;
+    border-radius: 10px;
+    width: 350px;
+
+}
+
+ 
