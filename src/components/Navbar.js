@@ -29,7 +29,7 @@ function Navbar() {
                 activeClassName="active"
                 to="/"
                 className="nav-links"
-                onKeyPress={closeMobileMenu}
+                onClick={closeMobileMenu}
               >
                 Home
               </NavLink>
@@ -101,6 +101,7 @@ function Navbar() {
                 activeClassName="active-icon"
                 to="/signin-signup"
                 className="nav-links"
+                onClick={closeMobileMenu}
               >
                 <i class="fas fa-user"></i>
               </NavLink>
@@ -110,6 +111,7 @@ function Navbar() {
                 activeClassName="active-icon"
                 to="/cart"
                 className="nav-links"
+                onClick={closeMobileMenu}
               >
                 <div className="cart-numbers">{currentItemInCart}</div>
                 <i class="fas fa-shopping-cart"></i>
@@ -120,6 +122,7 @@ function Navbar() {
                 activeClassName="active-icon"
                 to="/favourites"
                 className="nav-links"
+                onClick={closeMobileMenu}
               >
                 <i class="fas fa-heart"></i>
               </NavLink>

@@ -1,5 +1,5 @@
 .navbar {
-  background: $color-accent;
+  background: rgba($color-accent, 0.4);
   height: 70px;
   display: flex;
   justify-content: center;
@@ -19,7 +19,7 @@
 }
 
 .navbar-logo {
-  color: $color-accent;
+  color: $color-primary;
   font-weight: 800;
   justify-self: start;
   margin-left: 20px;
@@ -277,7 +277,7 @@
 }
 
 .active-icon {
-  color: #ed165f !important;
+  color: $color-accent !important;
 }
 
 .cart-numbers {

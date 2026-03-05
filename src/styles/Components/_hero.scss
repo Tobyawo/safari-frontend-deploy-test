@@ -19,15 +19,15 @@
 }
 
 .collection {
-margin-top: 80px;
-height: 14px;
-font-family: Mulish;
-font-style: normal;
-font-weight: 600;
-font-size: 30px;
-line-height: 14px;
-text-align: center;
-color: #FFFFFF;
+  margin-top: 80px;
+  height: 14px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 14px;
+  text-align: center;
+  color: #FFFFFF;
 }
 
 .checkout-collection {
@@ -64,15 +64,24 @@ color: #FFFFFF;
   }
 
 .collection {
-margin-top: 80px;
-height: 14px;
-font-family: Mulish;
-font-style: normal;
-font-weight: 600;
-font-size: 30px;
-line-height: 14px;
-text-align: center;
-color: #FFFFFF;
+  margin-top: 80px;
+  height: 14px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 14px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+@media only screen and (max-width: 600px) {
+  .collection {
+    margin-top: 24px;
+    font-size: 20px;
+    line-height: 1.4;
+    padding: 0 16px;
+  }
 }
 
 
