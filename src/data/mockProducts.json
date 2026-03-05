@@ -1,0 +1,269 @@
+{
+  "content": [
+    {
+      "id": 1,
+      "name": "Refurbished MacBook Pro 13\"",
+      "price": 420000,
+      "description": "2019 model, 8GB RAM, 256GB SSD, great for everyday work.",
+      "subCategory": [{ "name": "Laptops" }],
+      "colors": [{ "color": "Silver" }],
+      "sizes": [{ "size": "13\"" }],
+      "productImages": [
+        { "image": "/images/products/engin-akyurt-BAoncvnAl8I-unsplash 1.png" }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy S22",
+      "price": 380000,
+      "description": "Clean UK used, 128GB, 5G, comes with charger.",
+      "subCategory": [{ "name": "Phones" }],
+      "colors": [{ "color": "Black" }],
+      "sizes": [{ "size": "128GB" }],
+      "productImages": [
+        { "image": "/images/products/gustavo-spindula-l7wrlsKDmCE-unsplash 1.png" }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Dell XPS 15",
+      "price": 650000,
+      "description": "Core i7, 16GB RAM, 512GB SSD, ideal for creators.",
+      "subCategory": [{ "name": "Laptops" }],
+      "colors": [{ "color": "Silver" }],
+      "sizes": [{ "size": "15\"" }],
+      "productImages": [
+        { "image": "/images/products/gustavo-spindula-l7wrlsKDmCE-unsplash 1.png" }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "iPad Air 10.9\"",
+      "price": 260000,
+      "description": "256GB Wi‑Fi, perfect for reading, browsing and light work.",
+      "subCategory": [{ "name": "Tablets" }],
+      "colors": [{ "color": "Blue" }],
+      "sizes": [{ "size": "10.9\"" }],
+      "productImages": [
+        { "image": "/images/products/engin-akyurt-BAoncvnAl8I-unsplash 1.png" }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Laptop Backpack & Sleeve",
+      "price": 35000,
+      "description": "15\" padded laptop backpack plus neoprene sleeve.",
+      "subCategory": [{ "name": "Laptop Accessories" }],
+      "colors": [{ "color": "Black" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/products/gustavo-spindula-l7wrlsKDmCE-unsplash 1.png" }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "MagSafe Fast Charger",
+      "price": 18000,
+      "description": "Original 20W USB‑C fast charger for supported phones.",
+      "subCategory": [{ "name": "Phone Accessories" }],
+      "colors": [{ "color": "White" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/products/engin-akyurt-BAoncvnAl8I-unsplash 1.png" }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "PlayStation 5 Console",
+      "price": 480000,
+      "description": "Disc edition, includes one controller and HDMI cable.",
+      "subCategory": [{ "name": "Gaming & Consoles" }],
+      "colors": [{ "color": "White" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/products/gustavo-spindula-l7wrlsKDmCE-unsplash 1.png" }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Toyota Corolla 2009",
+      "price": 3200000,
+      "description": "Registered, automatic, AC chilling, buy and drive.",
+      "subCategory": [{ "name": "Cars" }],
+      "colors": [{ "color": "Blue" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/products/gustavo-spindula-l7wrlsKDmCE-unsplash 1.png" }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Bajaj Boxer Motorcycle",
+      "price": 450000,
+      "description": "Strong engine, perfect for dispatch or personal use.",
+      "subCategory": [{ "name": "Motorcycles" }],
+      "colors": [{ "color": "Red" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/products/gustavo-spindula-l7wrlsKDmCE-unsplash 1.png" }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Mercedes Sprinter Bus",
+      "price": 7800000,
+      "description": "Used for interstate transport, well maintained.",
+      "subCategory": [{ "name": "Trucks & Buses" }],
+      "colors": [{ "color": "White" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/products/gustavo-spindula-l7wrlsKDmCE-unsplash 1.png" }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Toyota Brake Pad Set",
+      "price": 25000,
+      "description": "OEM brake pad set for Corolla 2004‑2008.",
+      "subCategory": [{ "name": "Spare Parts" }],
+      "colors": [{ "color": "Black" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/products/engin-akyurt-BAoncvnAl8I-unsplash 1.png" }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Industrial Generator 15kVA",
+      "price": 2800000,
+      "description": "Diesel generator, ideal for small businesses.",
+      "subCategory": [{ "name": "Commercial Equipment" }],
+      "colors": [{ "color": "Yellow" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/sample/equipment-1.png" }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Bosch Impact Drill",
+      "price": 90000,
+      "description": "Professional 800W impact drill with accessories.",
+      "subCategory": [{ "name": "Power Tools" }],
+      "colors": [{ "color": "Blue" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/sample/power-tool-1.png" }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Small Industrial Lathe Machine",
+      "price": 1250000,
+      "description": "Used for light machining work, still in good condition.",
+      "subCategory": [{ "name": "Industrial Machinery" }],
+      "colors": [{ "color": "Grey" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/sample/machinery-1.png" }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Fabric Sofa Set",
+      "price": 250000,
+      "description": "3‑seater and 2‑seater, gently used, no tears or stains.",
+      "subCategory": [{ "name": "Home Furniture" }],
+      "colors": [{ "color": "Beige" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/sample/sofa-1.png" }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Double Door Refrigerator",
+      "price": 180000,
+      "description": "Energy-saving fridge, working perfectly, clean interior.",
+      "subCategory": [{ "name": "Home Appliances" }],
+      "colors": [{ "color": "White" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/sample/fridge-1.png" }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "6‑Burner Gas Cooker + Oven",
+      "price": 145000,
+      "description": "Stainless steel 6‑burner gas cooker with large oven.",
+      "subCategory": [{ "name": "Kitchen Appliances" }],
+      "colors": [{ "color": "Silver" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/sample/kitchen-1.png" }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Executive Office Desk",
+      "price": 120000,
+      "description": "L‑shaped wooden desk with drawer and cable management.",
+      "subCategory": [{ "name": "Office Furniture" }],
+      "colors": [{ "color": "Brown" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/sample/office-furniture-1.png" }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Wall Art & Decor Set",
+      "price": 45000,
+      "description": "Pack of 3 framed art pieces for living room decor.",
+      "subCategory": [{ "name": "Home Decor" }],
+      "colors": [{ "color": "Multi" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/sample/decor-1.png" }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Smart Home Security Kit",
+      "price": 160000,
+      "description": "Includes 4 CCTV cameras, DVR and 1TB storage.",
+      "subCategory": [{ "name": "Smart Home & Security" }],
+      "colors": [{ "color": "White" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/sample/security-1.png" }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Unisex Leather Wrist Watch",
+      "price": 30000,
+      "description": "Minimalist leather strap wrist watch, water resistant.",
+      "subCategory": [{ "name": "Fashion Accessories" }],
+      "colors": [{ "color": "Brown" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/sample/fashion-accessory-1.png" }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Smart TV 55\"",
+      "price": 320000,
+      "description": "4K UHD smart TV with YouTube and Netflix apps.",
+      "subCategory": [{ "name": "Home Appliances" }],
+      "colors": [{ "color": "Black" }],
+      "sizes": [],
+      "productImages": [
+        { "image": "/images/sample/tv-1.png" }
+      ]
+    }
+  ]
+}
+

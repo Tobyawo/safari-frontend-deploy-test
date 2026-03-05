@@ -8,20 +8,15 @@ function Accessories() {
     <>
       <AccessoriesLayout
         value={{
-          author: "Accessories",
+          author: "Home & Accessories",
           names: [
-            { name: "Facemask", path: "localhost/" },
-            { name: "Jewelry", path: "localhost" },
-            { name: "Watches", path: "localhost" },
-            { name: "Hair accessories", path: "localhost" },
-            { name: "Belts", path: "localhost" },
-            { name: "Backpacks", path: "localhost" },
-            { name: "Handbags", path: "localhost" },
-            { name: "Fragrances", path: "localhost" },
-            { name: "Sunglasses and eyewears", path: "localhost" },
-            { name: "Socks", path: "localhost" },
-            { name: "Hats and beanies", path: "localhost" },
-            { name: "Gloves", path: "localhost" },
+            { name: "Home Furniture", path: "localhost/" },
+            { name: "Home Appliances", path: "localhost" },
+            { name: "Kitchen Appliances", path: "localhost" },
+            { name: "Office Furniture", path: "localhost" },
+            { name: "Home Decor", path: "localhost" },
+            { name: "Smart Home & Security", path: "localhost" },
+            { name: "Fashion Accessories", path: "localhost" },
           ],
           category: "Category",
         }}

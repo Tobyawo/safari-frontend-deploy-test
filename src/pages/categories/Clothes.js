@@ -8,20 +8,14 @@ function Clothes() {
     <>
       <ClothingLayout
         value={{
-          author: "Clothes",
+          author: "Laptops & Phones",
           names: [
-            { name: "Dresses", path: "localhost/" },
-            { name: "Denim", path: "localhost" },
-            { name: "Jeans", path: "localhost" },
-            { name: "Jumpsuits", path: "localhost" },
-            { name: "Top", path: "localhost" },
-            { name: "Jacket and coats", path: "localhost" },
-            { name: "Pants", path: "localhost" },
-            { name: "Shorts", path: "localhost" },
-            { name: "Skirts", path: "localhost" },
-            { name: "Loungerie & underwear", path: "localhost" },
-            { name: "Leather", path: "localhost" },
-            { name: "Sweater and knits", path: "localhost" },
+            { name: "Laptops", path: "localhost/" },
+            { name: "Phones", path: "localhost" },
+            { name: "Tablets", path: "localhost" },
+            { name: "Laptop Accessories", path: "localhost" },
+            { name: "Phone Accessories", path: "localhost" },
+            { name: "Gaming & Consoles", path: "localhost" },
           ],
           category: "Category",
         }}

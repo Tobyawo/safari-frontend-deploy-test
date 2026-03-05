@@ -47,7 +47,7 @@ button {
 
 .subscribe-button {
   padding: 9.5px 10px 9.5px 10px;
-  background-color: #e9425e;
+  background-color: $color-accent;
   border: none;
   display: inline-flex;
   color: #fff;
@@ -61,14 +61,14 @@ button {
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 2px;
-  border: 2px solid #ed165f;
+  border: 2px solid $color-accent;
   padding: 12px 28px 12px 28px;
   border-radius: 6px;
   cursor: pointer !important;
 }
 
 .cart-proceed-checkout {
-  background: #ed165f;
+  background: $color-accent;
   color: #fff;
   margin-left: 50px;
 }
@@ -81,7 +81,7 @@ button {
   }
 
   .favourite-buynow {
-    background: #ed165f;
+    background: $color-accent;
     border-radius: 6px;
     color: #fff;
     border: none;
@@ -95,7 +95,7 @@ button {
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
-    color: #ed165f;
+    color: $color-accent;
   }
 
   .favourite-remove {
@@ -106,12 +106,12 @@ button {
     font-size: 16px;
     line-height: 18px;
     letter-spacing: 0.2px;
-    color: #ed165f;
+    color: $color-accent;
     margin-top: 10px;
   }
 
   .product-item-addtocart {
-    background: #e9425e !important;
+    background: $color-accent !important;
     color: #fff;
     border: none;
     font-size: 25px;
@@ -125,13 +125,13 @@ button {
     font-size: 16px;
     line-height: 18px;
     letter-spacing: 0.2px;
-    color: #ed165f;
+    color: $color-accent;
     border: none;
     text-transform: uppercase;
   }
 
   .qty {
-    background-color: #e9425e;
+    background-color: $color-accent;
     color: #fff;
     border: none;
     padding: 5px 10px;
@@ -149,7 +149,7 @@ button {
     font-size: 16px;
     line-height: 18px;
     letter-spacing: 0.2px;
-    color: #ed165f;
+    color: $color-accent;
     border: none;
     text-transform: uppercase;
   }
