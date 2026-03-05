@@ -8,20 +8,15 @@ function Shoes() {
     <>
       <ShoeLayout
         value={{
-          author: "Shoes",
+          author: "Cars & Equipment",
           names: [
-            { name: "Booties", path: "localhost/" },
-            { name: "Flats", path: "localhost" },
-            { name: "Boots", path: "localhost" },
-            { name: "Sandals", path: "localhost" },
-            { name: "Sneakers", path: "localhost" },
-            { name: "Slides and Slippers", path: "localhost" },
-            { name: "Heels", path: "localhost" },
-            { name: "Wedges", path: "localhost" },
-            { name: "Mules", path: "localhost" },
-            { name: "Party Shoes", path: "localhost" },
-            { name: "Vegan Shoes", path: "localhost" },
-            { name: "Oxfords", path: "localhost" },
+            { name: "Cars", path: "localhost/" },
+            { name: "Motorcycles", path: "localhost" },
+            { name: "Trucks & Buses", path: "localhost" },
+            { name: "Spare Parts", path: "localhost" },
+            { name: "Commercial Equipment", path: "localhost" },
+            { name: "Power Tools", path: "localhost" },
+            { name: "Industrial Machinery", path: "localhost" },
           ],
           category: "Category",
         }}

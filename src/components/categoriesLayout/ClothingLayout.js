@@ -84,27 +84,14 @@ const ProductsLayout = (props) => {
     allFilters(0);
   };
 
-  const handleCheck = (e) => {
-    // if(checkedPrices.length === 0) return setFilteredLoadedClothes(loadedClothes)
-    console.log(e.target.checked);
-    const { price } = activeFilter;
-    if (!price.includes(e.target.value)) {
-      price.push(e.target.value);
-      setActiveFilter({ ...activeFilter, price });
-    } else {
-      setActiveFilter({
-        ...activeFilter,
-        price: price.filter((item) => item !== e.target.value),
-      });
+  const handleCheck = (value) => {
+    // Dropdown: single price range or all
+    if (!value) {
+      setActiveFilter({ ...activeFilter, price: [] });
+      allFilters();
+      return;
     }
-    if (checkedPrices[0])
-      console.log(
-        "checkedPrices",
-        checkedPrices.sort((a, b) => +a.split(",")[0] - b.split(",")[0])
-      );
-
-    //   const filteredClothes = loadedClothes.filter(cloth => +cloth.price >= Number(checkedPrices[0].split(",")[0]) && +cloth.price <= Number(checkedPrices[checkedPrices.length - 1].split(",")[1]))
-    //   setFilteredLoadedClothes(filteredClothes);
+    setActiveFilter({ ...activeFilter, price: [value] });
     allFilters();
   };
 

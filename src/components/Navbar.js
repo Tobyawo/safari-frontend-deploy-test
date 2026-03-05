@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useCart } from "../utilities/CartContext";
+import firstCheckerLogo from "../assets/firstchecker-logo.png";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -40,7 +41,7 @@ function Navbar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Clothes
+                Laptops & Phones
               </NavLink>
             </li>
             <li className="nav-item">
@@ -50,7 +51,7 @@ function Navbar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Shoes
+                Cars & Equipment
               </NavLink>
             </li>
             <li className="nav-item">
@@ -60,7 +61,7 @@ function Navbar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Accessories
+                Home & Accessories
               </NavLink>
             </li>
 
@@ -78,7 +79,7 @@ function Navbar() {
           </ul>
           <div>
             <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-              <img src="../images/navbar/Logo.png" alt="safari-logo" />
+              <img src={firstCheckerLogo} alt="FirstChecker logo" />
             </Link>
           </div>
           <ul className={click ? "nav-menu-right active" : "nav-menu-right"}>

@@ -78,24 +78,13 @@ const ProductsLayout = (props) => {
     allFilters(0);
   };
 
-  const handleCheck = (e) => {
-    console.log(e.target.checked);
-    const { price } = activeFilter;
-    if (!price.includes(e.target.value)) {
-      price.push(e.target.value);
-      setActiveFilter({ ...activeFilter, price });
-    } else {
-      setActiveFilter({
-        ...activeFilter,
-        price: price.filter((item) => item !== e.target.value),
-      });
+  const handleCheck = (value) => {
+    if (!value) {
+      setActiveFilter({ ...activeFilter, price: [] });
+      allFilters();
+      return;
     }
-    if (checkedPrices[0])
-      console.log(
-        "checkedPrices",
-        checkedPrices.sort((a, b) => +a.split(",")[0] - b.split(",")[0])
-      );
-
+    setActiveFilter({ ...activeFilter, price: [value] });
     allFilters();
   };
 

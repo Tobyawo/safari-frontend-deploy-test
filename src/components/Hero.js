@@ -1,50 +1,25 @@
-import React from 'react'
-// import '../App.css'
-// import './css/Hero.css'
-
-// var slideIndex = 0;
-// showSlides();
-
-// function showSlides() {
-//   var i;
-//   var slides = document.getElementsByClassName("mySlides");
-//   var dots = document.getElementsByClassName("dot");
-//   for (i = 0; i < slides.length; i++) {
-//     slides[i].style.display = "none";  
-//   }
-//   slideIndex++;
-//   if (slideIndex > slides.length) {slideIndex = 1}    
-//   for (i = 0; i < dots.length; i++) {
-//     dots[i].className = dots[i].className.replace(" active", "");
-//   }
-//   slides[slideIndex-1].style.display = "block";  
-//   dots[slideIndex-1].className += " active";
-//   setTimeout(showSlides, 2000); // Change image every 2 seconds
-// }
+import React from "react";
+import heroIllustration from "../assets/firstchecker-hero.png";
 
 function Hero() {
-    return (
+
+  return (
     <div className="hero-container slideshow-container">
-             <img src='./images/bg.png' alt='bg' className='Hero-image1'/>
-             <div className="dot-group">
-                <span className="dot"></span> 
-                <span className="dot"></span> 
-                <span className="dot"></span> 
-             </div>
-             <p className="collection">Explore our collection</p>
-             <img src="./images/dropdown.svg" alt="dropdown"  className="checkout-collection"/>
-         {/* <div className="mySlides fade">
-             <img src='./images/bg.png' alt='bg' className='Hero-image1'/>
-             <p className="collection">Explore our collection</p>
-             <img src="./images/dropdown.svg" alt="dropdown"  className="checkout-collection"/>
-         </div>
-         <div className="mySlides fade">
-             <img src='./images/bg.png' alt='bg' className='Hero-image1'/>
-             <p className="collection">Explore our collection</p>
-             <img src="./images/dropdown.svg" alt="dropdown"  className="checkout-collection"/>
-         </div> */}
+      <img
+        src={heroIllustration}
+        alt="FirstChecker featured items"
+        className="Hero-image1"
+      />
+      <p className="collection">
+        Buy and sell everyday items with FirstChecker
+      </p>
+      <img
+        src="./images/dropdown.svg"
+        alt="scroll down"
+        className="checkout-collection"
+      />
     </div>
-    )
+  );
 }
 
-export default Hero
+export default Hero;

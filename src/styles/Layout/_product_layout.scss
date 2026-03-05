@@ -1,3 +1,5 @@
+@import "../Base/variables";
+
 .productLayout {
   display: grid;
   grid-template-columns: 0.6fr 1.4fr;
@@ -14,6 +16,108 @@
 .product__container {
   width: 97% !important;
   min-height: 500px;
+}
+
+.category-dropdown {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid #d3d3d8;
+  background-color: #ffffff;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, #999 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, #999 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.category-dropdown:focus {
+  border-color: $color-accent;
+  box-shadow: 0 0 0 2px rgba(255, 138, 0, 0.15);
+}
+
+.category-dropdown option {
+  color: #111;
+}
+
+.category-image-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 32px 20px 0 20px;
+}
+
+.category-image-strip__item {
+  height: 140px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.category-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.category-empty-state__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.category-empty-state__image {
+  width: 140px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.category-empty-state__text {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.category-empty-state__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.category-empty-state__detail {
+  max-width: 160px;
+  font-size: 12px;
+  color: #555;
+}
+
+.category-empty-state__name {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.category-empty-state__desc {
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.category-empty-state__price {
+  font-weight: 600;
+  color: $color-accent;
 }
 
 .category-title {

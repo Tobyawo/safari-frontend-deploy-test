@@ -1,9 +1,11 @@
+@import "../Base/variables";
+
 .categoriesNavlinks {
   font-size: 16px;
   line-height: 18px;
   list-style-type: none;
-  margin-bottom: 10px;
-  margin-left: 9px;
+  margin-bottom: 12px;
+  margin-left: 0;
 }
 
 .categoriesNavlinks a {
@@ -15,5 +17,19 @@
 }
 
 .category-name {
+  display: inline-block;
+  width: 100%;
   cursor: pointer !important;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid #d3d3d8;
+  color: #333;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.category-name:hover {
+  border-color: $color-accent;
+  background-color: rgba(255, 138, 0, 0.08);
+  color: #111;
 }

@@ -1,12 +1,20 @@
 import BaseUrl from "./BaseUrl";
 import axios from "axios";
 import setHeader from "../utilities/Header";
+import mockProducts from "../data/mockProducts.json";
 
 const token = localStorage.getItem("token");
 console.log(token);
 
+const USE_MOCK_PRODUCTS = true;
+
 const productApis = {
   getAllProduct: async () => {
+    if (USE_MOCK_PRODUCTS) {
+      // Simulate async backend call
+      return Promise.resolve(mockProducts);
+    }
+
     const response = await axios.get(`${BaseUrl}/products`, {
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -24,6 +32,10 @@ const productApis = {
   },
 
   getAllProducts: async () => {
+    if (USE_MOCK_PRODUCTS) {
+      return Promise.resolve(mockProducts);
+    }
+
     const { data: products } = await axios.get(`${BaseUrl}/products`);
 
     return products;
