@@ -16,7 +16,7 @@ function FavouritesLayout() {
                             <Segment>
                                 <Grid>
                                     <GridColumn width="4">
-                                        <img src="http://localhost:3001/images/Casual%20Flat%20Loafers%202.png" alt="favourite-img" className="favourite-image"></img>
+                                        <img src="http://localhost:3000/images/Casual%20Flat%20Loafers%202.png" alt="favourite-img" className="favourite-image"></img>
                                     </GridColumn>
                                     <GridColumn width="12">
                                         <p className="favourite-title">Casual flat loafers</p>
@@ -38,7 +38,7 @@ function FavouritesLayout() {
                            <Segment>
                            <Grid>
                                     <GridColumn width="4">
-                                        <img src="http://localhost:3001/images/gustavo-spindula-l7wrlsKDmCE-unsplash%202.png" alt="favourite-img" className="favourite-image"></img>
+                                        <img src="http://localhost:3000/images/gustavo-spindula-l7wrlsKDmCE-unsplash%202.png" alt="favourite-img" className="favourite-image"></img>
                                     </GridColumn>
                                     <GridColumn width="12">
                                         <p className="favourite-title">Multicolored armless top</p>

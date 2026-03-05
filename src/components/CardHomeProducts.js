@@ -13,12 +13,17 @@ function CardProducts(props) {
         <div className="cards__wrapper">
           <ul className="cards__items">
             {props.products.map((product, index) => {
-              const { id, name, price } = product;
+            
+              const { id, name, price, image } = product;
+              // product.image = 
+              // product.productImages.map((image, index) => {
+                // console.log("THE PRODUCT CONTENT Image", image.image)})
+                // console.log("THE PRODUCT CONTENT Image", product.productImages);
               return (
                 <CardProductItem
                   key={index}
                   id={product.id}
-                  src="/images/products/gustavo-spindula-l7wrlsKDmCE-unsplash 1.png"
+                  src={product.productImages.map((image)=> image.image)}
                   name={product.name}
                   price={"₦" + product.price}
                   path={`/cart/${id}`}
