@@ -16,7 +16,7 @@ function HomePage() {
 
         const allProducts = await ProductApi.getAllProducts();
 
-        console.log(allProducts)
+        console.log('All Products returned ::::::::' +allProducts.content)
 
         if(mounted) setProducts(allProducts.content);
 
