@@ -59,6 +59,22 @@ h5 {
   
 }
 
+@media only screen and (max-width: 600px) {
+  .shopstyleh {
+    font-size: 28px;
+    line-height: 32px;
+    margin-top: 32px !important;
+    padding: 0 16px;
+  }
+
+  .shopstylep {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 48px !important;
+    padding: 0 16px;
+  }
+}
+
 // @media only screen and (max-width: 499px) {
 //   .addtocart {
 //     margin-left: 50%;

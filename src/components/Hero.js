@@ -8,7 +8,7 @@ function Hero() {
       <img
         src={heroIllustration}
         alt="FirstChecker featured items"
-        className="Hero-image1"
+        className="hero-image1"
       />
       <p className="collection">
         Buy and sell everyday items with FirstChecker
