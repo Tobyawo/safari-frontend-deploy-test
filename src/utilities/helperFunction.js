@@ -4,7 +4,7 @@ const monetize = (money) => {
     const dot = strMoney.indexOf(".");
     let kobo = "";
   
-    if (dot != -1) {
+    if (dot !== -1) {
       kobo = strMoney.substring(strMoney.indexOf("."));
       strMoney = strMoney.substring(0, strMoney.indexOf("."));
     }
@@ -17,7 +17,7 @@ const monetize = (money) => {
   
     let newStr = "";
   
-    if (count != 0) {
+    if (count !== 0) {
       newStr = strMoney.substring(0, count);
       strMoney = strMoney.substring(count);
     }
@@ -26,9 +26,9 @@ const monetize = (money) => {
   
     let moneytized = parts.join(",");
   
-    if (dot != -1) moneytized = `${moneytized}${kobo}`;
+    if (dot !== -1) moneytized = `${moneytized}${kobo}`;
   
-    return newStr != "" ? `${newStr},${moneytized}` : moneytized;
+    return newStr !== "" ? `${newStr},${moneytized}` : moneytized;
   };
   
   export { monetize };

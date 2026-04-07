@@ -1,13 +1,7 @@
 import React from "react";
 import CardProductItem from "../components/CardProductItem";
-import CartContext from "../store/Cart-Context";
-import { useContext } from "react";
-import { useState, useEffect } from "react";
-import productApis from "../apis/ProductApi";
 
 function ShoesPage(props) {
-  const cartCtx = useContext(CartContext);
-
   const { products } = props;
   console.log("THE CONTENT ISSSSSSS", products);
   return (

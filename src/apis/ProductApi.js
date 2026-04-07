@@ -26,6 +26,29 @@ const productApis = {
   },
 
   getProductById: async (id) => {
+    if (USE_MOCK_PRODUCTS) {
+      const numericId = Number(id);
+      const product =
+        mockProducts.content &&
+        mockProducts.content.find((item) => item.id === numericId);
+
+      if (!product) {
+        return null;
+      }
+
+      return {
+        ...product,
+        colors:
+          product.colors?.map((c) =>
+            typeof c === "string" ? c : c.color
+          ) || [],
+        sizes:
+          product.sizes?.map((s) =>
+            typeof s === "string" ? s : s.size
+          ) || [],
+      };
+    }
+
     const { data: product } = await axios.get(`${BaseUrl}/products/${id}`);
 
     return product;

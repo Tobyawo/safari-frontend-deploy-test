@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^12.8.3",
     "antd": "^4.16.5",
     "axios": "^1.6.3",
-    "node-sass": "^9.0.0",
+    "sass": "^1.77.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.9.0",
@@ -27,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "convert-product-images": "node scripts/convert-product-images.js",
+    "convert-stock-images": "PRODUCT_IMAGES_DIR=public/images/products/stock OUTPUT_DIR=public/images/products-converted PROCESSED_DIR=public/images/products-processed/stock-originals node scripts/convert-product-images.js"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +50,7 @@
     ]
   },
   "devDependencies": {
-    "react-data-grid": "^7.0.0-canary.49"
+    "react-data-grid": "^7.0.0-canary.49",
+    "sharp": "^0.33.5"
   }
 }
