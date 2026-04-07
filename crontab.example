@@ -1,0 +1,21 @@
+# Example: run image conversion on a schedule (system cron).
+# Edit paths and schedule as needed.
+#
+# Schedule (first 5 fields): minute hour day month weekday
+#   Every minute (default):     * * * * *
+#   Every day at 2:15 AM:       15 2 * * *
+#
+# Install (macOS/Linux):  crontab -e   then paste one line, or:
+#   crontab crontab.example
+#
+# Use the project root as working directory so relative paths resolve.
+
+# Every minute — converts from public/images/products, writes to products-converted,
+# moves originals to public/images/products-processed (PROCESSED_DIR) so cron skips them.
+* * * * * cd /absolute/path/to/safari-frontend-deploy-test && /usr/local/bin/node scripts/convert-product-images.js >> /tmp/product-images-cron.log 2>&1
+
+# Custom output / processed folders (env before node):
+# * * * * * cd /absolute/path/to/safari-frontend-deploy-test && OUTPUT_DIR=public/images/my-optimized PROCESSED_DIR=public/images/my-archive /usr/local/bin/node scripts/convert-product-images.js >> /tmp/product-images-cron.log 2>&1
+
+# Same, but hourly (minute 0 of every hour)
+# 0 * * * * cd /absolute/path/to/safari-frontend-deploy-test && TARGET_WIDTH=297 TARGET_HEIGHT=457 /usr/local/bin/node scripts/convert-product-images.js >> /tmp/product-images-cron.log 2>&1

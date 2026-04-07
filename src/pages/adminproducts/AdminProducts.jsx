@@ -6,35 +6,18 @@ import AdminLayout from '../../components/adminlayout/AdminLayout';
 import Footer from '../../components/Footer';
 import {categories} from '../../data/categories';
 import {subCategories} from '../../data/subCategories';
-import {useForm} from 'react-hook-form';
-import {yupResolver} from '@hookform/resolvers/yup';
-import * as yup from 'yup';
 import {colors} from '../../data/colors';
 import {sizes} from "../../data/sizes";
 import Axios from 'axios';
 
 
-const schema = yup.object().shape({
-  title: yup.string().required(),
-  price: yup.string().required(),
-  description: yup.string().required,
-})
-
 const token = localStorage.getItem('token');
 
-const AdminProducts = (props) => {
-
-  const {
-    register,
-    handleSubmit,
-    errors
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
+const AdminProducts = () => {
 
   const [selectedImages, setSelectedImages] = useState([]);
   const [imagesToUpload, setImagesToUpload] = useState([]);
-  const [uploadedImagesUrl, setUploadedImagesUrl] = useState([]);
+  const [, setUploadedImagesUrl] = useState([]);
   const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
   const [color, setColor] = useState([]);
@@ -99,7 +82,7 @@ const AdminProducts = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    imagesToUpload.map((image) => {
+    imagesToUpload.forEach((image) => {
       const formData = new FormData();
       formData.append("file", image)
       formData.append("upload_preset", "vgpe2ptd");

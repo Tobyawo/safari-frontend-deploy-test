@@ -25,29 +25,41 @@ function ProductItemLayout(props) {
   //use context for cart item on navigation bar
   const incrementCartItem = useCartUpdate();
 
-  useEffect(async () => {
-    const productData = await productApis.getProductById(productId);
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const productData = await productApis.getProductById(productId);
 
-    setProduct(productData);
+      if (!productData) {
+        return;
+      }
 
-    const arrColor = productData.colors;
-    arrColor.unshift("Select Color");
+      setProduct(productData);
 
-    const newOptionColor = arrColor.map((color, index) => {
-      return { key: index + 1, text: color, value: index + 1 };
-    });
+      const baseColors = productData.colors || [];
+      const arrColor = ["Select Color", ...baseColors];
 
-    setColors(newOptionColor);
+      const newOptionColor = arrColor.map((color, index) => ({
+        key: index + 1,
+        text: color,
+        value: index + 1,
+      }));
 
-    const arrSize = productData.sizes;
-    arrSize.unshift("Select Size");
+      setColors(newOptionColor);
 
-    const newOptionSize = arrSize.map((size, index) => {
-      return { key: index + 1, text: size, value: index + 1 };
-    });
+      const baseSizes = productData.sizes || [];
+      const arrSize = ["Select Size", ...baseSizes];
 
-    setSizes(newOptionSize);
-  }, []);
+      const newOptionSize = arrSize.map((size, index) => ({
+        key: index + 1,
+        text: size,
+        value: index + 1,
+      }));
+
+      setSizes(newOptionSize);
+    };
+
+    fetchProduct();
+  }, [productId]);
 
   //increment quantity
   const incrementQuantity = () => {
@@ -68,9 +80,12 @@ function ProductItemLayout(props) {
       price: product.price,
       name: product.name,
       description: product.description,
-      size: size == "Select Size" ? null : size,
-      color: color == "Select Color" ? null : color,
-      productImage: product.length ? props.productImage[0] : "",
+      size: size === "Select Size" ? null : size,
+      color: color === "Select Color" ? null : color,
+      productImage:
+        product.productImages && product.productImages[0]
+          ? product.productImages[0].image
+          : "",
     };
 
     const response = await productApis.addProductToCart(orderItems);
@@ -100,15 +115,19 @@ function ProductItemLayout(props) {
   };
 
   return (
-    <Container fluid padded className="product-item-container container">
+    <Container fluid className="product-item-container container">
       <Grid>
         <GridColumn mobile={16} tablet={16} widescreen={8} computer={8}>
           <Segment>
             <Image
-              src="http://localhost:3000/images/products/gustavo-spindula-l7wrlsKDmCE-unsplash%201.png"
-              alt="product-item-placeholder"
+              src={
+                product.productImages && product.productImages[0]
+                  ? product.productImages[0].image
+                  : "/images/sample/placeholder-product.png"
+              }
+              alt={product.name || "Product image"}
               centered
-            ></Image>
+            />
           </Segment>
           <Segment>
             <h5 className="product-item-description">Description</h5>

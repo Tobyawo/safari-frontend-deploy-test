@@ -13,9 +13,10 @@ export function useCartUpdate() {
 }
 
 export function CartProvider({ children }) {
-  const getCartCount = localStorage.getItem("cart-count");
-
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(() => {
+    const stored = localStorage.getItem("cart-count");
+    return stored !== null ? Number(stored) : 0;
+  });
 
   productApis
     .getCartItem()
